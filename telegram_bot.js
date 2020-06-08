@@ -238,9 +238,9 @@ registerPlugin({
                 // ignore empty channels
                 if (!clients || clients.length === 0) return;
 
-                list += `${channel.name()}:`;
+                list += `🔊<b>${channel.name()}</b>:`;
                 clients.sort().forEach(client => {
-                    list += `\n${CLIENT_PREFIX}${client.name()}`
+                    list += `\n 👤 <pre>${CLIENT_PREFIX}${client.name()}</pre>`
                 });
                 list += '\n';
             });
@@ -292,7 +292,7 @@ registerPlugin({
     }
 
     function handleAbout(msg) {
-        sendMessage(msg.chat.id, 'This bot was developed by <a href="https://github.com/irgendwr">Jonas Bögle</a>. Check out the <a href="https://github.com/irgendwr/sinusbot-scripts/blob/master/telegram_bot.js">code on GitHub</a>.', 'HTML')
+        sendMessage(msg.chat.id, 'If You have any problems about This bot or the TeamSpeak server please contact @EdisonJwa.', 'HTML')
         .catch(err => {
             engine.log(err);
         });
